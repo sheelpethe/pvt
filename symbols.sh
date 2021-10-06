@@ -16,6 +16,11 @@ find    $dir/include/linux                         \
         -not -name '*.mod.c'                          \
         -name "*.[chsS]" -print >> cscope.files
 
+find    $dir/drivers/iommu/                         \
+        -type f                                       \
+        -not -name '*.mod.c'                          \
+        -name "*.[chsS]" -print >> cscope.files
+
 cscope -b -q -k
 ctags -L cscope.files
 rm -f cscope.files
